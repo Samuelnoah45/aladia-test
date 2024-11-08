@@ -8,6 +8,7 @@
         <HomeCourseList />
         <HomeExplore />
         <HomeCourseContent />
+        <HomeStudentBought />
       </div>
     </div>
   </div>
