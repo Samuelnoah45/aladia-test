@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div class="flex items-center p-2 space-x-6 text-sm">
+  <div class="flex items-center p-2 px-4 space-x-6 text-sm">
     <div class="flex items-center space-x-4">
       <img src="@/assets/images//logo-udemy.svg" alt="Google" class="w-20" />
       <p>categories</p>
