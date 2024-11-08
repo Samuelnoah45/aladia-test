@@ -56,7 +56,7 @@ const handleLanguageVisibility = () => {
           </div>
         </div>
       </div>
-      <div class="h-10">
+      <div class="h-10 sticky top-4">
         <HomePriceCard />
       </div>
     </div>

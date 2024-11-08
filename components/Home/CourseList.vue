@@ -1,5 +1,5 @@
 <script setup>
-import { courseBenefits } from "./../../constant/listOfcourse";
+import { courseBenefits } from "../../constant/listOfCourse";
 const showMore = ref(false);
 </script>
 

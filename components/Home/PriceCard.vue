@@ -64,14 +64,18 @@
         <Icon class="text-xl shrink-0" name="material-symbols-light:close" />
       </div>
       <div class="flex mt-2">
-        <input type="text" placeholder="Enter Coupon" class="border border-gray-300 w-[70%] px-4 py-2 text-sm" />
+        <input
+          type="text"
+          placeholder="Enter Coupon"
+          class="border border-gray-300 w-[70%] focus:ring-0 focus:border-gray-300 px-4 py-2 text-sm"
+        />
         <button class="w-[30%] bg-secondary text-white py-2 hover:bg-gray-800">Apply</button>
       </div>
     </div>
 
     <div class="p-4 border-t space-y-2">
       <p class="text-lg text-gray-700 font-bold">Training 5 or more people?</p>
-      <p class="text-xs text-gray-500 mb-2">Get your team access to 27,000+ top Udemy courses anytime, anywhere.</p>
+      <p class="text-sm text-gray-500 mb-2">Get your team access to 27,000+ top Udemy courses anytime, anywhere.</p>
       <button class="w-full border-secondary border text-gray-700 py-2 font-bold text-sm hover:bg-gray-300">
         Try Udemy Business
       </button>

@@ -21,7 +21,6 @@ import { createStorage, prefixStorage } from 'file:///home/sky/Documents/upwork/
 import unstorage_47drivers_47fs from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unstorage/drivers/fs.mjs';
 import { toRouteMatcher, createRouter } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/radix3/dist/index.mjs';
 import BaseStyle from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/@primevue/core/base/style/index.mjs';
-import { Theme } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/@primeuix/styled/index.mjs';
 import { FontStyle, BUNDLED_LANGUAGES, BUNDLED_THEMES, getHighlighter } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/shiki-es/dist/shiki.node.mjs';
 import { consola } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unenv/runtime/npm/consola.mjs';
 import { extname } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/pathe/dist/index.mjs';
@@ -131,6 +130,8 @@ const _inlineRuntimeConfig = {
       },
       "navigation": {
         "fields": [
+          "layout",
+          "layout",
           "layout"
         ]
       },
@@ -189,9 +190,7 @@ const _inlineRuntimeConfig = {
       "importPT": "",
       "importTheme": "",
       "loadStyles": true,
-      "options": {
-        "theme": {}
-      },
+      "options": {},
       "components": [
         {
           "name": "AutoComplete",
@@ -1350,6 +1349,8 @@ const _inlineRuntimeConfig = {
     },
     "navigation": {
       "fields": [
+        "layout",
+        "layout",
         "layout"
       ]
     },
@@ -1787,9 +1788,9 @@ function normalizeCookieHeaders(headers) {
   return outgoingHeaders;
 }
 
-const config$1 = useRuntimeConfig();
+const config = useRuntimeConfig();
 const _routeRulesMatcher = toRouteMatcher(
-  createRouter({ routes: config$1.nitro.routeRules })
+  createRouter({ routes: config.nitro.routeRules })
 );
 function createRouteRulesHandler(ctx) {
   return eventHandler((event) => {
@@ -1887,8 +1888,7 @@ function publicAssetsURL(...path) {
 }
 
 const runtimeConfig = useRuntimeConfig();
-const config = runtimeConfig?.public?.primevue ?? {};
-const { options = {} } = config;
+runtimeConfig?.public?.primevue ?? {};
 
 const stylesToTop = [].join('');
 const styleProps = {
@@ -1899,7 +1899,7 @@ const styles$2 = [
     BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : ''
 ].join('');
 
-Theme.setTheme(options?.theme);
+
 
 const themes = 
 [

@@ -2,7 +2,9 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'HomeAnnouncemnt': typeof import("../components/Home/Announcemnt.vue")['default']
+    'HomeCourseContent': typeof import("../components/Home/CourseContent.vue")['default']
     'HomeCourseList': typeof import("../components/Home/CourseList.vue")['default']
+    'HomeExplore': typeof import("../components/Home/Explore.vue")['default']
     'HomeHero': typeof import("../components/Home/Hero.vue")['default']
     'HomeNavBar': typeof import("../components/Home/NavBar.vue")['default']
     'HomePriceCard': typeof import("../components/Home/PriceCard.vue")['default']
@@ -117,7 +119,9 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyHomeAnnouncemnt': typeof import("../components/Home/Announcemnt.vue")['default']
+    'LazyHomeCourseContent': typeof import("../components/Home/CourseContent.vue")['default']
     'LazyHomeCourseList': typeof import("../components/Home/CourseList.vue")['default']
+    'LazyHomeExplore': typeof import("../components/Home/Explore.vue")['default']
     'LazyHomeHero': typeof import("../components/Home/Hero.vue")['default']
     'LazyHomeNavBar': typeof import("../components/Home/NavBar.vue")['default']
     'LazyHomePriceCard': typeof import("../components/Home/PriceCard.vue")['default']
@@ -235,7 +239,9 @@ declare module 'vue' {
 }
 
 export const HomeAnnouncemnt: typeof import("../components/Home/Announcemnt.vue")['default']
+export const HomeCourseContent: typeof import("../components/Home/CourseContent.vue")['default']
 export const HomeCourseList: typeof import("../components/Home/CourseList.vue")['default']
+export const HomeExplore: typeof import("../components/Home/Explore.vue")['default']
 export const HomeHero: typeof import("../components/Home/Hero.vue")['default']
 export const HomeNavBar: typeof import("../components/Home/NavBar.vue")['default']
 export const HomePriceCard: typeof import("../components/Home/PriceCard.vue")['default']
@@ -350,7 +356,9 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyHomeAnnouncemnt: typeof import("../components/Home/Announcemnt.vue")['default']
+export const LazyHomeCourseContent: typeof import("../components/Home/CourseContent.vue")['default']
 export const LazyHomeCourseList: typeof import("../components/Home/CourseList.vue")['default']
+export const LazyHomeExplore: typeof import("../components/Home/Explore.vue")['default']
 export const LazyHomeHero: typeof import("../components/Home/Hero.vue")['default']
 export const LazyHomeNavBar: typeof import("../components/Home/NavBar.vue")['default']
 export const LazyHomePriceCard: typeof import("../components/Home/PriceCard.vue")['default']

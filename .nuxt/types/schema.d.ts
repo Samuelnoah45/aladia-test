@@ -346,9 +346,7 @@ declare module 'nuxt/schema' {
 
       loadStyles: boolean,
 
-      options: {
-         theme: any,
-      },
+      options: any,
 
       components: Array<{
 

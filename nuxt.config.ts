@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Aura from '@primevue/themes/aura';
 export default defineNuxtConfig({
   app: {
     // global transition
@@ -23,12 +22,8 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
   ],
   primevue: {
-        options: {
-            theme: {
-                // preset: Aura
-            }
-        }
-    },
+
+  },
   veeValidate: {
     // disable or enable auto imports
     autoImports: true,
