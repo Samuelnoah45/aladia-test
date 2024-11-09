@@ -51,11 +51,15 @@ onUnmounted(() => {
         <HomeCourseContent />
         <HomeReview />
         <HomeStudentBought />
+        <HomeFrequentlyBoughtTogether />
+        <HomeInstructors />
         <HomeUsersReviews />
+        <HomeMoreCourses />
       </div>
       <div class="h-full col-span-2">
         <HomePriceCard v-if="cardStore.cardName == 'smallCard'" class="sticky top-3 w-full" />
       </div>
     </div>
+    <HomeFooter />
   </div>
 </template>

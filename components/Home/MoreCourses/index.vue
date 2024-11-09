@@ -1,16 +1,17 @@
 <script setup>
-import { reviews } from "@/constant/reviewList";
+import { courses } from "@/constant/MoreCourses";
 const showMore = ref(false);
 </script>
 <template>
   <div class="space-y-4">
-    <h1 class="font-bold flex items-center text-2xl">
-      <span><Icon class="text-yellow-600 mb-1 ml-2" name="material-symbols:star" /></span> 4.5 course rating 33K ratings
+    <h1 class="font-bold flex items-center text-2xl space-x-1">
+      More Courses by
+      <span class="text-primary pl-1"> Andrei Neagoie</span>
     </h1>
-    <div class="grid grid-cols-2 gap-2">
-      <HomeUsersReviewsCard v-for="review in reviews" :reviewData="review" />
+    <div class="grid grid-cols-3 gap-2 border-b pb-10">
+      <HomeMoreCoursesCard v-for="course in courses" :courseData="course" />
     </div>
-    <button class="border p-3 text-sm font-bold border-gray-400">show More Reviews</button>
+    <button class="border p-3 w-full text-sm font-bold border-gray-400">Report Abuse</button>
   </div>
 </template>
 <style scoped></style>

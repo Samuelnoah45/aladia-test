@@ -2,10 +2,9 @@
 import { usePriceCard } from "@/stores/useCardDisplay";
 const cardStore = usePriceCard();
 </script>
-
 <template>
   <div
-    class="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden"
+    class="max-w-sm mx-auto bg-white shadow-lg overflow-hidden"
     :class="[cardStore.cardName == 'bigCard' ? '' : 'z-50']"
   >
     <div v-if="cardStore.cardName == 'bigCard'" class="relative">
@@ -15,7 +14,6 @@ const cardStore = usePriceCard();
         <button class="text-white text-xl font-bold">Preview this course</button>
       </div>
     </div>
-
     <div class="p-4">
       <div class="flex items-center space-x-4">
         <div class="text-3xl text-primary font-bold">$11.99</div>

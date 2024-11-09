@@ -1,4 +1,4 @@
-const courses = [
+export const courses = [
     {
         image: "/images/course-thumbnail.png",
         logo: "/images/course-thumbnail.png",
