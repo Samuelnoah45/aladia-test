@@ -1,4 +1,4 @@
-export default {
+const client_manifest = {
   "ProseCode.css": {
     "resourceType": "style",
     "prefetch": true,
@@ -855,4 +855,7 @@ export default {
     "prefetch": true,
     "mimeType": "image/svg+xml"
   }
-}
+};
+
+export { client_manifest as default };
+//# sourceMappingURL=client.manifest.mjs.map

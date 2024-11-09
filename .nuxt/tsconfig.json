@@ -67,7 +67,7 @@
         "./color-mode-options.mjs"
       ],
       "#mdc-imports": [
-        "./mdc-imports"
+        "./mdc-imports.mjs"
       ],
       "pinia": [
         "../node_modules/pinia/dist/pinia"

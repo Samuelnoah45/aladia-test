@@ -1,13 +1,5 @@
-globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file:///home/sky/Documents/upwork/aladia-test/node_modules/node-fetch-native/dist/polyfill.mjs';
-import { Server } from 'node:http';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import { mkdirSync } from 'node:fs';
-import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, isEvent, createEvent, getRequestHeader, splitCookiesString, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, getQuery as getQuery$1, getCookie, createError, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, getResponseStatusText } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/h3/dist/index.mjs';
-import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/devalue/index.js';
-import { renderSSRHead } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/@unhead/ssr/dist/index.mjs';
+globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import 'file:///home/sky/Documents/upwork/aladia-test/node_modules/node-fetch-native/dist/polyfill.mjs';
+import { defineEventHandler, handleCacheHeaders, isEvent, createEvent, getRequestHeader, splitCookiesString, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseStatus, setResponseHeader, send, getRequestHeaders, removeResponseHeader, createError, getResponseHeader, getQuery as getQuery$1, getCookie, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/h3/dist/index.mjs';
 import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/ofetch/dist/node.mjs';
 import destr from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/destr/dist/index.mjs';
 import { createCall, createFetch } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unenv/runtime/fetch/index.mjs';
@@ -16,22 +8,27 @@ import { snakeCase, kebabCase, pascalCase, camelCase } from 'file:///home/sky/Do
 import { klona } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/klona/dist/index.mjs';
 import defu, { defuFn, defu as defu$1 } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/defu/dist/defu.mjs';
 import { hash as hash$1 } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withLeadingSlash, withoutTrailingSlash, isRelative } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/ufo/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, decodePath, withLeadingSlash, withoutTrailingSlash, isRelative } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/ufo/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unstorage/drivers/fs.mjs';
+import unstorage_47drivers_47memory from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unstorage/drivers/memory.mjs';
+import unstorage_47drivers_47lru_45cache from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unstorage/drivers/lru-cache.mjs';
+import unstorage_47drivers_47fs_45lite from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unstorage/drivers/fs-lite.mjs';
 import { toRouteMatcher, createRouter } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/radix3/dist/index.mjs';
 import BaseStyle from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/@primevue/core/base/style/index.mjs';
+import { promises } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve, extname } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/pathe/dist/index.mjs';
 import { FontStyle, BUNDLED_LANGUAGES, BUNDLED_THEMES, getHighlighter } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/shiki-es/dist/shiki.node.mjs';
 import { consola } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unenv/runtime/npm/consola.mjs';
-import { extname } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/pathe/dist/index.mjs';
 import { unified } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unified/index.js';
 import { toString } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/mdast-util-to-string/index.js';
-import { postprocess, preprocess } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark/dev/index.js';
+import { postprocess, preprocess } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark/index.js';
 import { stringifyPosition } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unist-util-stringify-position/index.js';
-import { markdownLineEnding, markdownSpace } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-character/dev/index.js';
-import { push, splice } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-chunked/dev/index.js';
+import { markdownLineEnding, markdownSpace } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-character/index.js';
+import { push, splice } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-chunked/index.js';
 import { resolveAll } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-resolve-all/index.js';
-import { normalizeUri } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-sanitize-uri/dev/index.js';
+import { normalizeUri } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/micromark-util-sanitize-uri/index.js';
 import slugify from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/slugify/slugify.js';
 import remarkParse from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/remark-parse/index.js';
 import remark2rehype from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/remark-rehype/index.js';
@@ -45,13 +42,8 @@ import rehypeExternalLinks from 'file:///home/sky/Documents/upwork/aladia-test/n
 import rehypeSortAttributeValues from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/rehype-sort-attribute-values/index.js';
 import rehypeSortAttributes from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/rehype-sort-attributes/index.js';
 import rehypeRaw from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/rehype-raw/index.js';
-import { remarkPlugins, rehypePlugins, highlight } from 'file:///home/sky/Documents/upwork/aladia-test/.nuxt/mdc-imports.mjs';
 import { visit } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unist-util-visit/index.js';
-import { Text, version, unref } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/vue/index.mjs';
-import { createServerHead as createServerHead$1 } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/@unhead/shared/dist/index.mjs';
-
-const r=Object.create(null),E=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),s=new Proxy(r,{get(e,o){return E()[o]??r[o]},has(e,o){const i=E();return o in i||o in r},set(e,o,i){const g=E(!0);return g[o]=i,!0},deleteProperty(e,o){if(!o)return !1;const i=E(!0);return delete i[o],!0},ownKeys(){const e=E(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",p=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"]];function B(){if(globalThis.process?.env)for(const e of p){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const l=B(),d=l.name;function n(e){return e?e!=="false":!1}const I=globalThis.process?.platform||"",T=n(s.CI)||l.ci!==!1,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const C=t==="test"||n(s.TEST);n(s.MINIMAL)||T||C||!R;const a=/^win/i.test(I);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||(R||a)&&s.TERM!=="dumb"||T);const _=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(_?.split(".")[0])||null;const W=globalThis.process||Object.create(null),c={versions:{}};new Proxy(W,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in c)return c[o]}});const A=globalThis.process?.release?.name==="node",L=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,O=!!globalThis.fastly,S=!!globalThis.Netlify,N=!!globalThis.EdgeRuntime,u=globalThis.navigator?.userAgent==="Cloudflare-Workers",b=!!globalThis.__lagon__,F=[[S,"netlify"],[N,"edge-light"],[u,"workerd"],[O,"fastly"],[D,"deno"],[L,"bun"],[A,"node"],[b,"lagon"]];function G(){const e=F.find(o=>o[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
+import { Text } from 'file:///home/sky/Documents/upwork/aladia-test/node_modules/vue/index.mjs';
 
 const inlineAppConfig = {};
 
@@ -70,6 +62,11 @@ const _inlineRuntimeConfig = {
     "routeRules": {
       "/__nuxt_error": {
         "cache": false
+      },
+      "/_nuxt/**": {
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
       }
     }
   },
@@ -118,7 +115,7 @@ const _inlineRuntimeConfig = {
     "content": {
       "locales": [],
       "defaultLocale": "",
-      "integrity": "",
+      "integrity": 1731146544708,
       "experimental": {
         "stripQueryParameters": false,
         "advanceQuery": false,
@@ -130,9 +127,6 @@ const _inlineRuntimeConfig = {
       },
       "navigation": {
         "fields": [
-          "layout",
-          "layout",
-          "layout",
           "layout"
         ]
       },
@@ -163,7 +157,7 @@ const _inlineRuntimeConfig = {
         "tr": "prose-tr"
       },
       "highlight": false,
-      "wsUrl": "ws://localhost:4000/",
+      "wsUrl": "",
       "documentDriven": {
         "page": true,
         "navigation": true,
@@ -1350,9 +1344,6 @@ const _inlineRuntimeConfig = {
     },
     "navigation": {
       "fields": [
-        "layout",
-        "layout",
-        "layout",
         "layout"
       ]
     },
@@ -1433,23 +1424,26 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
 
 const serverAssets = [{"baseName":"server","dir":"/home/sky/Documents/upwork/aladia-test/server/assets"}];
 
-const assets = createStorage();
+const assets$1 = createStorage();
 
 for (const asset of serverAssets) {
-  assets.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir }));
+  assets$1.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir }));
 }
 
 const storage = createStorage({});
 
-storage.mount('/assets', assets);
+storage.mount('/assets', assets$1);
 
+storage.mount('internal:nuxt:prerender', unstorage_47drivers_47memory({"driver":"memory"}));
+storage.mount('internal:nuxt:prerender:island', unstorage_47drivers_47lru_45cache({"driver":"lruCache","max":1000}));
+storage.mount('internal:nuxt:prerender:payload', unstorage_47drivers_47lru_45cache({"driver":"lruCache","max":1000}));
+storage.mount('data', unstorage_47drivers_47fs_45lite({"driver":"fsLite","base":"/home/sky/Documents/upwork/aladia-test/.data/kv"}));
 storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"/home/sky/Documents/upwork/aladia-test/content","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"/home/sky/Documents/upwork/aladia-test/.nuxt/content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/sky/Documents/upwork/aladia-test","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/sky/Documents/upwork/aladia-test/server","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/sky/Documents/upwork/aladia-test/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/sky/Documents/upwork/aladia-test/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/sky/Documents/upwork/aladia-test/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -1848,47 +1842,6 @@ const _tpBZ5eBrqj = (function(nitro) {
   });
 });
 
-function defineRenderHandler(handler) {
-  return eventHandler(async (event) => {
-    if (event.path.endsWith("/favicon.ico")) {
-      setResponseHeader(event, "Content-Type", "image/x-icon");
-      return send(
-        event,
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      );
-    }
-    const response = await handler(event);
-    if (!response) {
-      const _currentStatus = getResponseStatus(event);
-      setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
-      return send(
-        event,
-        "No response returned from render handler: " + event.path
-      );
-    }
-    const nitroApp = useNitroApp();
-    await nitroApp.hooks.callHook("render:response", response, { event });
-    if (response.headers) {
-      setResponseHeaders(event, response.headers);
-    }
-    if (response.statusCode || response.statusMessage) {
-      setResponseStatus(event, response.statusCode, response.statusMessage);
-    }
-    return typeof response.body === "string" ? response.body : JSON.stringify(response.body);
-  });
-}
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const publicBase = useRuntimeConfig().app.cdnURL || useRuntimeConfig().app.baseURL;
-  return path.length ? joinURL(publicBase, ...path) : publicBase;
-}
-
 const runtimeConfig = useRuntimeConfig();
 runtimeConfig?.public?.primevue ?? {};
 
@@ -1896,7 +1849,7 @@ const stylesToTop = [].join('');
 const styleProps = {
     
 };
-const styles$2 = [
+const styles = [
     ,
     BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : ''
 ].join('');
@@ -1913,7 +1866,7 @@ const defineNitroPlugin = (def) => def;
 const _BJugmvk7Sa = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", (html) => {
     html.head.unshift(stylesToTop);
-    html.head.push(styles$2);
+    html.head.push(styles);
     html.head.push(themes);
   });
 });
@@ -1930,7 +1883,7 @@ const errorHandler = (async function errorhandler(error, event) {
     statusCode,
     statusMessage,
     message,
-    stack: statusCode !== 404 ? `<pre>${stack.map((i) => `<span class="stack${i.internal ? " internal" : ""}">${i.text}</span>`).join("\n")}</pre>` : "",
+    stack: "",
     data: error.data
   };
   if (error.unhandled || error.fatal) {
@@ -1957,10 +1910,7 @@ const errorHandler = (async function errorhandler(error, event) {
     redirect: "manual"
   }).catch(() => null) : null;
   if (!res) {
-    const { template } = await Promise.resolve().then(function () { return errorDev; }) ;
-    {
-      errorObject.description = errorObject.message;
-    }
+    const { template } = await import('../error-500.mjs');
     if (event.handled) {
       return;
     }
@@ -1976,6 +1926,561 @@ const errorHandler = (async function errorhandler(error, event) {
   }
   setResponseStatus(event, res.status && res.status !== 200 ? res.status : void 0, res.statusText);
   return send(event, html);
+});
+
+const assets = {
+  "/favicon.ico": {
+    "type": "image/vnd.microsoft.icon",
+    "etag": "\"10be-n8egyE9tcb7sKGr/pYCaQ4uWqxI\"",
+    "mtime": "2024-11-09T10:02:31.691Z",
+    "size": 4286,
+    "path": "../../.output/public/favicon.ico"
+  },
+  "/_nuxt/ContentDoc.51b01d5a.js": {
+    "type": "application/javascript",
+    "etag": "\"61f-07Y3Rn4C6BHSqjL5Tw3GfWZ0BCc\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 1567,
+    "path": "../../.output/public/_nuxt/ContentDoc.51b01d5a.js"
+  },
+  "/_nuxt/ContentList.651aef77.js": {
+    "type": "application/javascript",
+    "etag": "\"367-Lt2oRMrc0Zfw6+BULJttlkSuITc\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 871,
+    "path": "../../.output/public/_nuxt/ContentList.651aef77.js"
+  },
+  "/_nuxt/ContentNavigation.8d9e0f68.js": {
+    "type": "application/javascript",
+    "etag": "\"381-sYA7l2uZULBNZMF25QykV3tNgEk\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 897,
+    "path": "../../.output/public/_nuxt/ContentNavigation.8d9e0f68.js"
+  },
+  "/_nuxt/ContentQuery.c492b4de.js": {
+    "type": "application/javascript",
+    "etag": "\"9a3-SiDmxGe5boKYjUQIMUIswMLBDDE\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 2467,
+    "path": "../../.output/public/_nuxt/ContentQuery.c492b4de.js"
+  },
+  "/_nuxt/ContentRenderer.cecaefb7.js": {
+    "type": "application/javascript",
+    "etag": "\"4bb-AcQ1boghuaH1YRAQth3oQQNtSVw\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 1211,
+    "path": "../../.output/public/_nuxt/ContentRenderer.cecaefb7.js"
+  },
+  "/_nuxt/ContentRendererMarkdown.4eb23692.js": {
+    "type": "application/javascript",
+    "etag": "\"70-ATd4qsMd+OAG3dmWbr/QTYkPes0\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 112,
+    "path": "../../.output/public/_nuxt/ContentRendererMarkdown.4eb23692.js"
+  },
+  "/_nuxt/ContentRendererMarkdown.vue.31abebe4.js": {
+    "type": "application/javascript",
+    "etag": "\"5abd-Mwq9JcjhthnETvvrGCn2AglPyJM\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 23229,
+    "path": "../../.output/public/_nuxt/ContentRendererMarkdown.vue.31abebe4.js"
+  },
+  "/_nuxt/ContentSlot.75d81b6d.js": {
+    "type": "application/javascript",
+    "etag": "\"749-E50BdsJVCv7+lrsWm5LX7aC0K10\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 1865,
+    "path": "../../.output/public/_nuxt/ContentSlot.75d81b6d.js"
+  },
+  "/_nuxt/DocumentDrivenEmpty.dd9dabe4.js": {
+    "type": "application/javascript",
+    "etag": "\"120-iGAyPZ3KbUCpdA8cUi7/tE63LSw\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 288,
+    "path": "../../.output/public/_nuxt/DocumentDrivenEmpty.dd9dabe4.js"
+  },
+  "/_nuxt/DocumentDrivenNotFound.590c0dbc.js": {
+    "type": "application/javascript",
+    "etag": "\"9f-LJNRuhCGeRt95UGYp+qSpOscK24\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 159,
+    "path": "../../.output/public/_nuxt/DocumentDrivenNotFound.590c0dbc.js"
+  },
+  "/_nuxt/Icon.6f5d80f8.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"43-JMK9uCbKePUzi/rOIeYOKAmsaWg\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 67,
+    "path": "../../.output/public/_nuxt/Icon.6f5d80f8.css"
+  },
+  "/_nuxt/Icon.97bca614.js": {
+    "type": "application/javascript",
+    "etag": "\"52e8-pRnjOJtXvfl2h9G6GoD42YMSoFI\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 21224,
+    "path": "../../.output/public/_nuxt/Icon.97bca614.js"
+  },
+  "/_nuxt/IconCSS.8001021c.js": {
+    "type": "application/javascript",
+    "etag": "\"349-82U7yYBvtDo+iBH8HZuaM/6xo5s\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 841,
+    "path": "../../.output/public/_nuxt/IconCSS.8001021c.js"
+  },
+  "/_nuxt/IconCSS.fe0874d9.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"102-wcoyXH7uDWGP6s8t4bK/iz3ANnk\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 258,
+    "path": "../../.output/public/_nuxt/IconCSS.fe0874d9.css"
+  },
+  "/_nuxt/Markdown.e9bcb38f.js": {
+    "type": "application/javascript",
+    "etag": "\"14b-WfEv9mII/1iXkQNQYob4cvohc+8\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 331,
+    "path": "../../.output/public/_nuxt/Markdown.e9bcb38f.js"
+  },
+  "/_nuxt/ProseA.15d8213e.js": {
+    "type": "application/javascript",
+    "etag": "\"18b-NWTiG/IT+EcwoiTBMsuW8k4agyc\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 395,
+    "path": "../../.output/public/_nuxt/ProseA.15d8213e.js"
+  },
+  "/_nuxt/ProseBlockquote.ac404c60.js": {
+    "type": "application/javascript",
+    "etag": "\"bd-AymsIpesoozvalry6dXum3CBuRA\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 189,
+    "path": "../../.output/public/_nuxt/ProseBlockquote.ac404c60.js"
+  },
+  "/_nuxt/ProseCode.f0cb2741.js": {
+    "type": "application/javascript",
+    "etag": "\"62-r+shoN1u3CS+Xqic6YLFSnOKYlo\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 98,
+    "path": "../../.output/public/_nuxt/ProseCode.f0cb2741.js"
+  },
+  "/_nuxt/ProseCode.vue.25ee0c12.js": {
+    "type": "application/javascript",
+    "etag": "\"141-9BkMSxP3f0SEhfX9kReRTMqQ13I\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 321,
+    "path": "../../.output/public/_nuxt/ProseCode.vue.25ee0c12.js"
+  },
+  "/_nuxt/ProseCodeInline.5622a4bd.js": {
+    "type": "application/javascript",
+    "etag": "\"bc-W6jvwunX5iZ6X3b8hlMlo0Gmf1E\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 188,
+    "path": "../../.output/public/_nuxt/ProseCodeInline.5622a4bd.js"
+  },
+  "/_nuxt/ProseEm.27028f36.js": {
+    "type": "application/javascript",
+    "etag": "\"ba-CRhE6Q5XLNThqhau+38Qxb5HR7s\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 186,
+    "path": "../../.output/public/_nuxt/ProseEm.27028f36.js"
+  },
+  "/_nuxt/ProseH1.4f9750d1.js": {
+    "type": "application/javascript",
+    "etag": "\"1ba-6VE9ieWVlFujp1gYmfRqLdd3Z4Q\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 442,
+    "path": "../../.output/public/_nuxt/ProseH1.4f9750d1.js"
+  },
+  "/_nuxt/ProseH2.8b5ec2d4.js": {
+    "type": "application/javascript",
+    "etag": "\"1c0-I3ofRaw6Bk9rjKeBGe8uuEl+58o\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 448,
+    "path": "../../.output/public/_nuxt/ProseH2.8b5ec2d4.js"
+  },
+  "/_nuxt/ProseH3.216bf6f3.js": {
+    "type": "application/javascript",
+    "etag": "\"1c0-FJZIe2Ydo9EnFMzQcY65qhTaO68\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 448,
+    "path": "../../.output/public/_nuxt/ProseH3.216bf6f3.js"
+  },
+  "/_nuxt/ProseH4.9cc40d52.js": {
+    "type": "application/javascript",
+    "etag": "\"1c0-kfNURZh8szsvyRM5LewqeLqHR+o\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 448,
+    "path": "../../.output/public/_nuxt/ProseH4.9cc40d52.js"
+  },
+  "/_nuxt/ProseH5.6e4462cc.js": {
+    "type": "application/javascript",
+    "etag": "\"1c0-0LC6sZL0xXKrN/lpWQpZP0jZ8nM\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 448,
+    "path": "../../.output/public/_nuxt/ProseH5.6e4462cc.js"
+  },
+  "/_nuxt/ProseH6.976b9756.js": {
+    "type": "application/javascript",
+    "etag": "\"1c0-yQZQM9Ln7CZFNaWUAMFtW9HDcu8\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 448,
+    "path": "../../.output/public/_nuxt/ProseH6.976b9756.js"
+  },
+  "/_nuxt/ProseHr.4d64201e.js": {
+    "type": "application/javascript",
+    "etag": "\"91-7+FIN1MFe/q+KGscdJZRG6HVlw4\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 145,
+    "path": "../../.output/public/_nuxt/ProseHr.4d64201e.js"
+  },
+  "/_nuxt/ProseImg.3734f056.js": {
+    "type": "application/javascript",
+    "etag": "\"26f-fD9wCulSLJtQAhpATMpZHW/6/LE\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 623,
+    "path": "../../.output/public/_nuxt/ProseImg.3734f056.js"
+  },
+  "/_nuxt/ProseLi.58f7378a.js": {
+    "type": "application/javascript",
+    "etag": "\"ba-Z29+oCM5Ngfr0yRspF22xENmJ9I\"",
+    "mtime": "2024-11-09T10:02:31.679Z",
+    "size": 186,
+    "path": "../../.output/public/_nuxt/ProseLi.58f7378a.js"
+  },
+  "/_nuxt/ProseOl.db01c6b4.js": {
+    "type": "application/javascript",
+    "etag": "\"ba-TYKKf6ecWjhveLgf5sow1HWV6uc\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 186,
+    "path": "../../.output/public/_nuxt/ProseOl.db01c6b4.js"
+  },
+  "/_nuxt/ProseP.2849806e.js": {
+    "type": "application/javascript",
+    "etag": "\"b9-Hi2aT5z3g2VnPaafa3Aal0gtU/c\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 185,
+    "path": "../../.output/public/_nuxt/ProseP.2849806e.js"
+  },
+  "/_nuxt/ProsePre.32589170.js": {
+    "type": "application/javascript",
+    "etag": "\"2a3-BY8BZ/RQ/pKW9KSsQXco6rnnzwI\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 675,
+    "path": "../../.output/public/_nuxt/ProsePre.32589170.js"
+  },
+  "/_nuxt/ProsePre.e63e49c6.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"2e-GbvrqT5j9gSWlpa8e36U/Kv6Zx0\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 46,
+    "path": "../../.output/public/_nuxt/ProsePre.e63e49c6.css"
+  },
+  "/_nuxt/ProseStrong.ef0d5389.js": {
+    "type": "application/javascript",
+    "etag": "\"be-9BE5M56meffM65GxDh1fdgdzPJA\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 190,
+    "path": "../../.output/public/_nuxt/ProseStrong.ef0d5389.js"
+  },
+  "/_nuxt/ProseTable.fadfb91d.js": {
+    "type": "application/javascript",
+    "etag": "\"bd-7k2RdtXuwnUqcFnEXwSse0StZto\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 189,
+    "path": "../../.output/public/_nuxt/ProseTable.fadfb91d.js"
+  },
+  "/_nuxt/ProseTbody.9cf6c588.js": {
+    "type": "application/javascript",
+    "etag": "\"bd-L8dIGCBKu5zXIJxAMN2Mk8Xg5gI\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 189,
+    "path": "../../.output/public/_nuxt/ProseTbody.9cf6c588.js"
+  },
+  "/_nuxt/ProseTd.f67c2ffb.js": {
+    "type": "application/javascript",
+    "etag": "\"ba-P+pE/bczCNXw9/PYtK6MxPpVubs\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 186,
+    "path": "../../.output/public/_nuxt/ProseTd.f67c2ffb.js"
+  },
+  "/_nuxt/ProseTh.43f70b19.js": {
+    "type": "application/javascript",
+    "etag": "\"ba-dD9ZFfYzDsEZI7N4Fn2sR5G0y3s\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 186,
+    "path": "../../.output/public/_nuxt/ProseTh.43f70b19.js"
+  },
+  "/_nuxt/ProseThead.41fcd11f.js": {
+    "type": "application/javascript",
+    "etag": "\"bd-mBQYCxjJ66xchLPoddRRLLtZ2d8\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 189,
+    "path": "../../.output/public/_nuxt/ProseThead.41fcd11f.js"
+  },
+  "/_nuxt/ProseTr.5d72edb6.js": {
+    "type": "application/javascript",
+    "etag": "\"b5-h+949RTQCy+148uH9O3+/5uyP0s\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 181,
+    "path": "../../.output/public/_nuxt/ProseTr.5d72edb6.js"
+  },
+  "/_nuxt/ProseUl.1efd9525.js": {
+    "type": "application/javascript",
+    "etag": "\"ba-yR4A0PUuUffsviHyXPOhTNRt3Mw\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 186,
+    "path": "../../.output/public/_nuxt/ProseUl.1efd9525.js"
+  },
+  "/_nuxt/asyncData.b508f36d.js": {
+    "type": "application/javascript",
+    "etag": "\"940-3xb/9jOgVZkksWKpgVZDsVI8oY8\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 2368,
+    "path": "../../.output/public/_nuxt/asyncData.b508f36d.js"
+  },
+  "/_nuxt/client-db.1cc8ae61.js": {
+    "type": "application/javascript",
+    "etag": "\"5394-atSGAz9II5Ih+WbSR/P/XSVXfPM\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 21396,
+    "path": "../../.output/public/_nuxt/client-db.1cc8ae61.js"
+  },
+  "/_nuxt/codeDem0.61d33de9.png": {
+    "type": "image/png",
+    "etag": "\"11f56-xmEmWbg4AofYE2n4cKfk5R2fyOM\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 73558,
+    "path": "../../.output/public/_nuxt/codeDem0.61d33de9.png"
+  },
+  "/_nuxt/config.c73089ca.js": {
+    "type": "application/javascript",
+    "etag": "\"a9-hH+wJK120IpScqtXxZvK1T8u1PE\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 169,
+    "path": "../../.output/public/_nuxt/config.c73089ca.js"
+  },
+  "/_nuxt/courses.08f8742f.png": {
+    "type": "image/png",
+    "etag": "\"a6c8-dqX+nC8JZYj2l4gL+adoqKcjpvQ\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 42696,
+    "path": "../../.output/public/_nuxt/courses.08f8742f.png"
+  },
+  "/_nuxt/courses2.967fdd82.png": {
+    "type": "image/png",
+    "etag": "\"91b2-AfbeQJDm/wstqt+uyB7aer95oX8\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 37298,
+    "path": "../../.output/public/_nuxt/courses2.967fdd82.png"
+  },
+  "/_nuxt/document-driven.d999f489.js": {
+    "type": "application/javascript",
+    "etag": "\"810-0PXAX9xx9OcS1RNJTxQ1qfGUlzs\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 2064,
+    "path": "../../.output/public/_nuxt/document-driven.d999f489.js"
+  },
+  "/_nuxt/entry.097bf6a4.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"5a64-LRbiKouZ+MvwW88I/jiqZznap+Y\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 23140,
+    "path": "../../.output/public/_nuxt/entry.097bf6a4.css"
+  },
+  "/_nuxt/entry.2b42e627.js": {
+    "type": "application/javascript",
+    "etag": "\"34b2f-ecvf6LP7cW24Qhgr6t6kp9F26dM\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 215855,
+    "path": "../../.output/public/_nuxt/entry.2b42e627.js"
+  },
+  "/_nuxt/error-404.95c28eb4.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"e70-L8dF9pJCW0qi7de8Az4GyBoTHvI\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 3696,
+    "path": "../../.output/public/_nuxt/error-404.95c28eb4.css"
+  },
+  "/_nuxt/error-404.c9e4b7d2.js": {
+    "type": "application/javascript",
+    "etag": "\"8f5-sW7aGu3Sb/LrFgMv/Ru/7qU4mw8\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 2293,
+    "path": "../../.output/public/_nuxt/error-404.c9e4b7d2.js"
+  },
+  "/_nuxt/error-500.c982508f.js": {
+    "type": "application/javascript",
+    "etag": "\"77e-TzX3IWultzy2mtqbva/FfqjYSU8\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 1918,
+    "path": "../../.output/public/_nuxt/error-500.c982508f.js"
+  },
+  "/_nuxt/error-500.e798523c.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"7e0-QP983DB9m1oiDr87r1V1AYEhrfo\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 2016,
+    "path": "../../.output/public/_nuxt/error-500.e798523c.css"
+  },
+  "/_nuxt/head.01df6079.js": {
+    "type": "application/javascript",
+    "etag": "\"275-MLae0Lh9eUVUhZk3jRBbyriWk1I\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 629,
+    "path": "../../.output/public/_nuxt/head.01df6079.js"
+  },
+  "/_nuxt/index.252a131e.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"109-9Qj7RNecxNsIlIAEhBj6k3R837E\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 265,
+    "path": "../../.output/public/_nuxt/index.252a131e.css"
+  },
+  "/_nuxt/index.bcf289d1.js": {
+    "type": "application/javascript",
+    "etag": "\"112a6-6aX+sbHXp8zi+1v6CnHKjEUF+9s\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 70310,
+    "path": "../../.output/public/_nuxt/index.bcf289d1.js"
+  },
+  "/_nuxt/instructor.64ada658.jpg": {
+    "type": "image/jpeg",
+    "etag": "\"955e-cQpygv0yexeJQwgZ/cC6hiZvObk\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 38238,
+    "path": "../../.output/public/_nuxt/instructor.64ada658.jpg"
+  },
+  "/_nuxt/logo-udemy-white.7d29ee3c.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"7f2-W+WhXjPV9tmHhUiLUKlzKWmg5WQ\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 2034,
+    "path": "../../.output/public/_nuxt/logo-udemy-white.7d29ee3c.svg"
+  },
+  "/_nuxt/logo-udemy.b43017d0.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"763-hjtRTTNMaDk2H9I2AofQB/qOcjk\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 1891,
+    "path": "../../.output/public/_nuxt/logo-udemy.b43017d0.svg"
+  },
+  "/_nuxt/nuxt-link.21fbc598.js": {
+    "type": "application/javascript",
+    "etag": "\"f01-vbP+VxdO8ZnwTMZf8Hg40B1WLvE\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 3841,
+    "path": "../../.output/public/_nuxt/nuxt-link.21fbc598.js"
+  },
+  "/_nuxt/review.29480531.jpg": {
+    "type": "image/jpeg",
+    "etag": "\"2a72-Ge0qkn+cyj8qc5NvA0MD7PZbXXE\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 10866,
+    "path": "../../.output/public/_nuxt/review.29480531.jpg"
+  },
+  "/_nuxt/video.6ad7ffd7.png": {
+    "type": "image/png",
+    "etag": "\"dcbf2-EouKMcwk6gGnVZCARKXhKfNzbyQ\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 904178,
+    "path": "../../.output/public/_nuxt/video.6ad7ffd7.png"
+  },
+  "/_nuxt/vue.f36acd1f.0704f9cf.js": {
+    "type": "application/javascript",
+    "etag": "\"18e-Ufl7nsZlfTPwmC5OKRA1CKq4R+M\"",
+    "mtime": "2024-11-09T10:02:31.683Z",
+    "size": 398,
+    "path": "../../.output/public/_nuxt/vue.f36acd1f.0704f9cf.js"
+  }
+};
+
+function readAsset (id) {
+  const serverDir = dirname(fileURLToPath(globalThis._importMeta_.url));
+  return promises.readFile(resolve(serverDir, assets[id].path))
+}
+
+const publicAssetBases = {"/_nuxt":{"maxAge":31536000}};
+
+function isPublicAssetURL(id = '') {
+  if (assets[id]) {
+    return true
+  }
+  for (const base in publicAssetBases) {
+    if (id.startsWith(base)) { return true }
+  }
+  return false
+}
+
+function getAsset (id) {
+  return assets[id]
+}
+
+const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
+const EncodingMap = { gzip: ".gz", br: ".br" };
+const _f4b49z = eventHandler((event) => {
+  if (event.method && !METHODS.has(event.method)) {
+    return;
+  }
+  let id = decodePath(
+    withLeadingSlash(withoutTrailingSlash(parseURL(event.path).pathname))
+  );
+  let asset;
+  const encodingHeader = String(
+    getRequestHeader(event, "accept-encoding") || ""
+  );
+  const encodings = [
+    ...encodingHeader.split(",").map((e) => EncodingMap[e.trim()]).filter(Boolean).sort(),
+    ""
+  ];
+  if (encodings.length > 1) {
+    setResponseHeader(event, "Vary", "Accept-Encoding");
+  }
+  for (const encoding of encodings) {
+    for (const _id of [id + encoding, joinURL(id, "index.html" + encoding)]) {
+      const _asset = getAsset(_id);
+      if (_asset) {
+        asset = _asset;
+        id = _id;
+        break;
+      }
+    }
+  }
+  if (!asset) {
+    if (isPublicAssetURL(id)) {
+      removeResponseHeader(event, "Cache-Control");
+      throw createError({
+        statusMessage: "Cannot find static asset " + id,
+        statusCode: 404
+      });
+    }
+    return;
+  }
+  const ifNotMatch = getRequestHeader(event, "if-none-match") === asset.etag;
+  if (ifNotMatch) {
+    setResponseStatus(event, 304, "Not Modified");
+    return "";
+  }
+  const ifModifiedSinceH = getRequestHeader(event, "if-modified-since");
+  const mtimeDate = new Date(asset.mtime);
+  if (ifModifiedSinceH && asset.mtime && new Date(ifModifiedSinceH) >= mtimeDate) {
+    setResponseStatus(event, 304, "Not Modified");
+    return "";
+  }
+  if (asset.type && !getResponseHeader(event, "Content-Type")) {
+    setResponseHeader(event, "Content-Type", asset.type);
+  }
+  if (asset.etag && !getResponseHeader(event, "ETag")) {
+    setResponseHeader(event, "ETag", asset.etag);
+  }
+  if (asset.mtime && !getResponseHeader(event, "Last-Modified")) {
+    setResponseHeader(event, "Last-Modified", mtimeDate.toUTCString());
+  }
+  if (asset.encoding && !getResponseHeader(event, "Content-Encoding")) {
+    setResponseHeader(event, "Content-Encoding", asset.encoding);
+  }
+  if (asset.size > 0 && !getResponseHeader(event, "Content-Length")) {
+    setResponseHeader(event, "Content-Length", asset.size);
+  }
+  return readAsset(id);
 });
 
 const grammar = {
@@ -4161,6 +4666,14 @@ const handlers$1 = {
   containerComponent
 };
 
+const remarkPlugins = {
+};
+
+const rehypePlugins = {
+};
+
+const highlight = false;
+
 const defaults$1 = {
   remark: {
     plugins: {
@@ -5312,15 +5825,15 @@ const _eVV2ME = defineEventHandler(async (event) => {
   return createNav(contents?.result || contents, configs);
 });
 
-const _lazy_DmiBwI = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_DmiBwI = () => import('../renderer.mjs');
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_DmiBwI, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _f4b49z, lazy: false, middleware: true, method: undefined },
   { route: '/api/_mdc/highlight', handler: _SJUK3i, lazy: false, middleware: false, method: undefined },
   { route: '/api/_content/query/:qid/**:params', handler: _UUdMzG, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query/:qid', handler: _UUdMzG, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _UUdMzG, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.json', handler: _VxIRoS, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.1731146544708.json', handler: _VxIRoS, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid/**:params', handler: _eVV2ME, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _eVV2ME, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _eVV2ME, lazy: false, middleware: false, method: "get" },
@@ -5345,7 +5858,7 @@ function createNitroApp() {
     }
   };
   const h3App = createApp({
-    debug: destr(true),
+    debug: destr(false),
     onError: (error, event) => {
       captureError(error, { event, tags: ["request"] });
       return errorHandler(error, event);
@@ -5451,372 +5964,8 @@ function createNitroApp() {
 const nitroApp = createNitroApp();
 const useNitroApp = () => nitroApp;
 
-const server = new Server(toNodeListener(nitroApp.h3App));
-function getAddress() {
-  if (d === "stackblitz" || process.env.NITRO_NO_UNIX_SOCKET || process.versions.bun) {
-    return 0;
-  }
-  const socketName = `worker-${process.pid}-${threadId}.sock`;
-  if (a) {
-    return join("\\\\.\\pipe\\nitro", socketName);
-  } else {
-    const socketDir = join(tmpdir(), "nitro");
-    mkdirSync(socketDir, { recursive: true });
-    return join(socketDir, socketName);
-  }
-}
-const listenAddress = getAddress();
-server.listen(listenAddress, () => {
-  const _address = server.address();
-  parentPort.postMessage({
-    event: "listen",
-    address: typeof _address === "string" ? { socketPath: _address } : { host: "localhost", port: _address.port }
-  });
-});
+const localFetch = nitroApp.localFetch;
 trapUnhandledNodeErrors();
-async function onShutdown(signal) {
-  await nitroApp.hooks.callHook("close");
-}
-parentPort.on("message", async (msg) => {
-  if (msg && msg.event === "shutdown") {
-    await onShutdown();
-    parentPort.postMessage({ event: "exit" });
-  }
-});
 
-const _messages = {"appName":"Nuxt","version":"","statusCode":500,"statusMessage":"Server error","description":"An error occurred in the application and the page could not be served. If you are the application owner, check your server logs for details.","stack":""};
-const _render = function({ messages }) {
-var __t, __p = '';
-__p += '<!DOCTYPE html><html><head><title>' +
-((__t = ( messages.statusCode )) == null ? '' : __t) +
-' - ' +
-((__t = ( messages.statusMessage )) == null ? '' : __t) +
-' | ' +
-((__t = ( messages.appName )) == null ? '' : __t) +
-'</title><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,minimum-scale=1" name="viewport"><style>.spotlight{background:linear-gradient(45deg, #00DC82 0%, #36E4DA 50%, #0047E1 100%);opacity:0.8;filter:blur(30vh);height:60vh;bottom:-40vh}*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e0e0e0}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p,pre{margin:0}h1{font-size:inherit;font-weight:inherit}pre{font-size:1em;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.bg-white{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.bg-black\\/5{--tw-bg-opacity:.05;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.rounded-t-md{border-top-left-radius:.375rem;border-top-right-radius:.375rem}.flex{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.flex-col{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column}.flex-1{-webkit-box-flex:1;-ms-flex:1 1 0%;-webkit-flex:1 1 0%;flex:1 1 0%}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"}.font-medium{font-weight:500}.font-light{font-weight:300}.h-auto{height:auto}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-6xl{font-size:3.75rem;line-height:1}.leading-tight{line-height:1.25}.mb-8{margin-bottom:2rem}.mb-6{margin-bottom:1.5rem}.min-h-screen{min-height:100vh}.overflow-y-auto{overflow-y:auto}.p-8{padding:2rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.pt-14{padding-top:3.5rem}.fixed{position:fixed}.left-0{left:0}.right-0{right:0}.text-black{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.z-10{z-index:10}@media (min-width: 640px){.sm\\:text-8xl{font-size:6rem;line-height:1}.sm\\:text-2xl{font-size:1.5rem;line-height:2rem}}@media (prefers-color-scheme: dark){.dark\\:bg-black{--tw-bg-opacity:1;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.dark\\:bg-white\\/10{--tw-bg-opacity:.1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.dark\\:text-white{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}}</style><script>(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll(\'link[rel="modulepreload"]\'))i(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function s(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerPolicy&&(r.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?r.credentials="include":e.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(e){if(e.ep)return;e.ep=!0;const r=s(e);fetch(e.href,r)}})();</script></head><body class="font-sans antialiased bg-white px-10 pt-14 dark:bg-black text-black dark:text-white min-h-screen flex flex-col"><div class="fixed left-0 right-0 spotlight"></div><h1 class="text-6xl sm:text-8xl font-medium mb-6">' +
-((__t = ( messages.statusCode )) == null ? '' : __t) +
-'</h1><p class="text-xl sm:text-2xl font-light mb-8 leading-tight">' +
-((__t = ( messages.description )) == null ? '' : __t) +
-'</p><div class="bg-white rounded-t-md bg-black/5 dark:bg-white/10 flex-1 overflow-y-auto h-auto"><pre class="text-xl font-light leading-tight z-10 p-8">' +
-((__t = ( messages.stack )) == null ? '' : __t) +
-'</pre></div></body></html>';
-return __p
-};
-const _template = (messages) => _render({ messages: { ..._messages, ...messages } });
-const template$1 = _template;
-
-const errorDev = /*#__PURE__*/Object.freeze({
-      __proto__: null,
-      template: template$1
-});
-
-const Vue3 = version.startsWith("3");
-
-function resolveUnref(r) {
-  return typeof r === "function" ? r() : unref(r);
-}
-function resolveUnrefHeadInput(ref, lastKey = "") {
-  if (ref instanceof Promise)
-    return ref;
-  const root = resolveUnref(ref);
-  if (!ref || !root)
-    return root;
-  if (Array.isArray(root))
-    return root.map((r) => resolveUnrefHeadInput(r, lastKey));
-  if (typeof root === "object") {
-    return Object.fromEntries(
-      Object.entries(root).map(([k, v]) => {
-        if (k === "titleTemplate" || k.startsWith("on"))
-          return [k, unref(v)];
-        return [k, resolveUnrefHeadInput(v, k)];
-      })
-    );
-  }
-  return root;
-}
-
-const VueReactivityPlugin = defineHeadPlugin({
-  hooks: {
-    "entries:resolve": function(ctx) {
-      for (const entry of ctx.entries)
-        entry.resolvedInput = resolveUnrefHeadInput(entry.input);
-    }
-  }
-});
-
-const headSymbol = "usehead";
-function vueInstall(head) {
-  const plugin = {
-    install(app) {
-      if (Vue3) {
-        app.config.globalProperties.$unhead = head;
-        app.config.globalProperties.$head = head;
-        app.provide(headSymbol, head);
-      }
-    }
-  };
-  return plugin.install;
-}
-function createServerHead(options = {}) {
-  const head = createServerHead$1(options);
-  head.use(VueReactivityPlugin);
-  head.install = vueInstall(head);
-  return head;
-}
-
-const unheadPlugins = [];
-
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
-
-const appRootId = "__nuxt";
-
-const appRootTag = "div";
-
-globalThis.__buildAssetsURL = buildAssetsURL;
-globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file:///home/sky/Documents/upwork/aladia-test/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
-const getSPARenderer = lazyCachedFunction(async () => {
-  const manifest = await getClientManifest();
-  const spaTemplate = await Promise.resolve().then(function () { return _virtual__spaTemplate; }).then((r) => r.template).catch(() => "");
-  const options = {
-    manifest,
-    renderToString: () => `<${appRootTag}${` id="${appRootId}"` }>${spaTemplate}</${appRootTag}>`,
-    buildAssetsURL
-  };
-  const renderer = createRenderer(() => () => {
-  }, options);
-  const result = await renderer.renderToString({});
-  const renderToString = (ssrContext) => {
-    const config = useRuntimeConfig();
-    ssrContext.modules = ssrContext.modules || /* @__PURE__ */ new Set();
-    ssrContext.payload = {
-      _errors: {},
-      serverRendered: false,
-      data: {},
-      state: {}
-    };
-    ssrContext.config = {
-      public: config.public,
-      app: config.app
-    };
-    return Promise.resolve(result);
-  };
-  return {
-    rendererContext: renderer.rendererContext,
-    renderToString
-  };
-});
-const PAYLOAD_URL_RE = /\/_payload(\.[a-zA-Z0-9]+)?.json(\?.*)?$/ ;
-const renderer = defineRenderHandler(async (event) => {
-  const nitroApp = useNitroApp();
-  const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery$1(event) : null;
-  if (ssrError && ssrError.statusCode) {
-    ssrError.statusCode = parseInt(ssrError.statusCode);
-  }
-  if (ssrError && !("__unenv__" in event.node.req)) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: "Page Not Found: /__nuxt_error"
-    });
-  }
-  const islandContext = void 0;
-  let url = ssrError?.url || islandContext?.url || event.path;
-  const isRenderingPayload = PAYLOAD_URL_RE.test(url) && !islandContext;
-  if (isRenderingPayload) {
-    url = url.substring(0, url.lastIndexOf("/")) || "/";
-    event._path = url;
-    event.node.req.url = url;
-  }
-  const routeOptions = getRouteRules(event);
-  const head = createServerHead({
-    plugins: unheadPlugins
-  });
-  const headEntryOptions = { mode: "server" };
-  head.push(appHead, headEntryOptions);
-  const ssrContext = {
-    url,
-    event,
-    runtimeConfig: useRuntimeConfig(),
-    noSSR: !!true   ,
-    head,
-    error: !!ssrError,
-    nuxt: void 0,
-    /* NuxtApp */
-    payload: ssrError ? { error: ssrError } : {},
-    _payloadReducers: {},
-    islandContext
-  };
-  const renderer = await getSPARenderer() ;
-  const _rendered = await renderer.renderToString(ssrContext).catch(async (error) => {
-    if (ssrContext._renderResponse && error.message === "skipping render") {
-      return {};
-    }
-    const _err = !ssrError && ssrContext.payload?.error || error;
-    await ssrContext.nuxt?.hooks.callHook("app:error", _err);
-    throw _err;
-  });
-  await ssrContext.nuxt?.hooks.callHook("app:rendered", { ssrContext, renderResult: _rendered });
-  if (ssrContext._renderResponse) {
-    return ssrContext._renderResponse;
-  }
-  if (ssrContext.payload?.error && !ssrError) {
-    throw ssrContext.payload.error;
-  }
-  if (isRenderingPayload) {
-    const response2 = renderPayloadResponse(ssrContext);
-    return response2;
-  }
-  const inlinedStyles = Boolean(islandContext) ? await renderInlineStyles(ssrContext.modules ?? ssrContext._registeredComponents ?? []) : [];
-  const NO_SCRIPTS = routeOptions.experimentalNoScripts;
-  const { styles, scripts } = getRequestDependencies(ssrContext, renderer.rendererContext);
-  head.push({ style: inlinedStyles });
-  head.push({
-    link: Object.values(styles).map(
-      (resource) => ({ rel: "stylesheet", href: renderer.rendererContext.buildAssetsURL(resource.file) })
-    )
-  }, headEntryOptions);
-  if (!NO_SCRIPTS) {
-    head.push({
-      link: getPreloadLinks(ssrContext, renderer.rendererContext)
-    }, headEntryOptions);
-    head.push({
-      link: getPrefetchLinks(ssrContext, renderer.rendererContext)
-    }, headEntryOptions);
-    head.push({
-      script: renderPayloadJsonScript({ id: "__NUXT_DATA__", ssrContext, data: ssrContext.payload }) 
-    }, {
-      ...headEntryOptions,
-      // this should come before another end of body scripts
-      tagPosition: "bodyClose",
-      tagPriority: "high"
-    });
-  }
-  if (!routeOptions.experimentalNoScripts) {
-    head.push({
-      script: Object.values(scripts).map((resource) => ({
-        type: resource.module ? "module" : null,
-        src: renderer.rendererContext.buildAssetsURL(resource.file),
-        defer: resource.module ? null : true,
-        crossorigin: ""
-      }))
-    }, headEntryOptions);
-  }
-  const { headTags, bodyTags, bodyTagsOpen, htmlAttrs, bodyAttrs } = await renderSSRHead(head);
-  const htmlContext = {
-    island: Boolean(islandContext),
-    htmlAttrs: [htmlAttrs],
-    head: normalizeChunks([headTags, ssrContext.styles]),
-    bodyAttrs: [bodyAttrs],
-    bodyPrepend: normalizeChunks([bodyTagsOpen, ssrContext.teleports?.body]),
-    body: [_rendered.html],
-    bodyAppend: [bodyTags]
-  };
-  await nitroApp.hooks.callHook("render:html", htmlContext, { event });
-  const response = {
-    body: renderHTMLDocument(htmlContext),
-    statusCode: getResponseStatus(event),
-    statusMessage: getResponseStatusText(event),
-    headers: {
-      "content-type": "text/html;charset=utf-8",
-      "x-powered-by": "Nuxt"
-    }
-  };
-  return response;
-});
-function lazyCachedFunction(fn) {
-  let res = null;
-  return () => {
-    if (res === null) {
-      res = fn().catch((err) => {
-        res = null;
-        throw err;
-      });
-    }
-    return res;
-  };
-}
-function normalizeChunks(chunks) {
-  return chunks.filter(Boolean).map((i) => i.trim());
-}
-function joinTags(tags) {
-  return tags.join("");
-}
-function joinAttrs(chunks) {
-  return chunks.join(" ");
-}
-function renderHTMLDocument(html) {
-  return `<!DOCTYPE html>
-<html ${joinAttrs(html.htmlAttrs)}>
-<head>${joinTags(html.head)}</head>
-<body ${joinAttrs(html.bodyAttrs)}>${joinTags(html.bodyPrepend)}${joinTags(html.body)}${joinTags(html.bodyAppend)}</body>
-</html>`;
-}
-async function renderInlineStyles(usedModules) {
-  const styleMap = await getSSRStyles();
-  const inlinedStyles = /* @__PURE__ */ new Set();
-  for (const mod of usedModules) {
-    if (mod in styleMap) {
-      for (const style of await styleMap[mod]()) {
-        inlinedStyles.add(style);
-      }
-    }
-  }
-  return Array.from(inlinedStyles).map((style) => ({ innerHTML: style }));
-}
-function renderPayloadResponse(ssrContext) {
-  return {
-    body: stringify(splitPayload(ssrContext).payload, ssrContext._payloadReducers) ,
-    statusCode: getResponseStatus(ssrContext.event),
-    statusMessage: getResponseStatusText(ssrContext.event),
-    headers: {
-      "content-type": "application/json;charset=utf-8" ,
-      "x-powered-by": "Nuxt"
-    }
-  };
-}
-function renderPayloadJsonScript(opts) {
-  const contents = opts.data ? stringify(opts.data, opts.ssrContext._payloadReducers) : "";
-  const payload = {
-    type: "application/json",
-    id: opts.id,
-    innerHTML: contents,
-    "data-ssr": !(true )
-  };
-  if (opts.src) {
-    payload["data-src"] = opts.src;
-  }
-  return [
-    payload,
-    {
-      innerHTML: `window.__NUXT__={};window.__NUXT__.config=${uneval(opts.ssrContext.config)}`
-    }
-  ];
-}
-function splitPayload(ssrContext) {
-  const { data, prerenderedAt, ...initial } = ssrContext.payload;
-  return {
-    initial: { ...initial, prerenderedAt },
-    payload: { data, prerenderedAt }
-  };
-}
-
-const renderer$1 = /*#__PURE__*/Object.freeze({
-      __proto__: null,
-      default: renderer
-});
-
-const styles = {};
-
-const styles$1 = /*#__PURE__*/Object.freeze({
-      __proto__: null,
-      default: styles
-});
-
-const template = "";
-
-const _virtual__spaTemplate = /*#__PURE__*/Object.freeze({
-      __proto__: null,
-      template: template
-});
-//# sourceMappingURL=index.mjs.map
+export { useRuntimeConfig as a, useStorage as b, getRouteRules as g, localFetch as l, useNitroApp as u };
+//# sourceMappingURL=nitro-prerenderer.mjs.map
