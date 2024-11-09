@@ -1,3 +1,16 @@
+<script setup>
+import { reactive } from "vue";
+
+const instructor = reactive({
+  name: "Andrei Neagoie",
+  position: "Founder of zerotomastery.io",
+  image: "/images/course-thumbnail.png",
+  rating: "4.6",
+  reviews: "247,765",
+  students: "1,230,096",
+  courses: "17",
+});
+</script>
 <template>
   <div class="w-[80%] py-5">
     <div>
@@ -53,17 +66,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { reactive } from "vue";
-
-const instructor = reactive({
-  name: "Andrei Neagoie",
-  position: "Founder of zerotomastery.io",
-  image: "/images/course-thumbnail.png",
-  rating: "4.6",
-  reviews: "247,765",
-  students: "1,230,096",
-  courses: "17",
-});
-</script>

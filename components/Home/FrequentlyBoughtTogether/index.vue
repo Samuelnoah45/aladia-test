@@ -1,5 +1,4 @@
 <script setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { frequentlyBoughtCourses } from "@/constant/frequentlyBoughtCourses";
 const showMore = ref(false);
 </script>

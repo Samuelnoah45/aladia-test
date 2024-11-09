@@ -30,9 +30,7 @@ const truncatedText = computed(() => {
 
 <template>
   <div class="max-w-md p-4 bg-white border-t">
-    <div class="flex items-center mb-2">
-      <!-- Display Image if available, otherwise show initials -->
-      
+    <div class="flex items-center mb-2">      
       <div
         
         class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-bold"
@@ -53,7 +51,6 @@ const truncatedText = computed(() => {
         </div>
       </div>
 
-      <!-- Options Icon -->
       <Icon
         name="mdi:dots-vertical"
         class="ml-auto text-xl text-gray-500 cursor-pointer"
@@ -72,7 +69,6 @@ const truncatedText = computed(() => {
       >
     </p>
 
-    <!-- Helpful Section -->
     <div class="flex text-gray-500 text-sm py-2">
       <p class="mr-2">Helpful?</p>
       <Icon

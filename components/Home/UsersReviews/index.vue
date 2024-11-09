@@ -1,6 +1,5 @@
 <script setup>
 import { reviews } from "@/constant/reviewList";
-const showMore = ref(false);
 </script>
 <template>
   <div class="space-y-4">

@@ -1,6 +1,6 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { sections } from "../../constant/courseContent";
+import { sections } from "@/constant/courseContent";
 const showMore = ref(false);
 </script>
 <template>

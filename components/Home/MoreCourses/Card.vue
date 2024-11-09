@@ -29,12 +29,10 @@ const props = defineProps({
       <span class="text-gray-500 ml-1">({{ courseData.reviews.toLocaleString() }})</span>
     </div>
 
-    <!-- Course Details (hours, lectures, level) -->
     <p class="text-gray-500 text-xs mb-2">
       {{ courseData.totalHours }} total hours · {{ courseData.lectures }} lectures · {{ courseData.level }}
     </p>
 
-    <!-- Price -->
     <div class="flex items-center space-x-2">
       <span class="text-lg font-bold">{{ courseData.currentPrice }}</span>
       <span v-if="courseData.originalPrice" class="text-gray-400 line-through">

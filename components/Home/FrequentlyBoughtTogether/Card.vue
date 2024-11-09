@@ -49,7 +49,3 @@ const props = defineProps({
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Additional styling, if necessary */
-</style>
