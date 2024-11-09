@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { usePriceCard } from "@/stores/useCardDisplay";
+const cardStore = usePriceCard();
 import Breadcrumb from "primevue/breadcrumb";
 const items = ref([{ label: "Design" }, { label: "Web Design" }, { label: "Mobile App Design" }]);
 const isLanguageMore = ref(false);
@@ -13,8 +15,8 @@ const handleLanguageVisibility = () => {
 </script>
 <template>
   <div class="w-full bg-secondary p-6">
-    <div class="mx-auto flex max-w-6xl gap-16">
-      <div class="w-[60%] space-y-6">
+    <div class="mx-auto grid grid-cols-5 max-w-6xl gap-16" :class="[isLanguageMore ? 'h-[430px]' : 'h-[330px]']">
+      <div class="col-span-3 space-y-6">
         <Breadcrumb class="text-primaryDark text-sm font-bold" :model="items">
           <template #separator> <Icon class="text-xl text-white font-bold" name="lsicon:right-filled" /> </template>
         </Breadcrumb>
@@ -56,7 +58,7 @@ const handleLanguageVisibility = () => {
           </div>
         </div>
       </div>
-      <div class="h-10 sticky top-4">
+      <div v-if="cardStore.cardName == 'bigCard'" class="col-span-2">
         <HomePriceCard />
       </div>
     </div>

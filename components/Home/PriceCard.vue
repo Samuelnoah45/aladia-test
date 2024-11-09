@@ -1,8 +1,14 @@
-<script setup></script>
+<script setup>
+import { usePriceCard } from "@/stores/useCardDisplay";
+const cardStore = usePriceCard();
+</script>
 
 <template>
-  <div class="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-    <div class="relative">
+  <div
+    class="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden"
+    :class="[cardStore.cardName == 'bigCard' ? '' : 'z-50']"
+  >
+    <div v-if="cardStore.cardName == 'bigCard'" class="relative">
       <img src="@/assets/images/video.png" alt="Course Preview" class="w-full h-48 object-cover" />
       <div class="absolute inset-0 bg-black bg-opacity-50 flex-col flex items-center justify-center">
         <Icon class="text-white text-7xl" name="lsicon:play-filled" />
