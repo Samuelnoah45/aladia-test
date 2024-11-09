@@ -28,7 +28,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <div v-if="isAtTop" class="w-full fixed top-0 h-[70px] z-30 bg-black p-3">
+  <div v-if="isAtTop" class="w-full fixed top-0 lg:h-[70px] hidden lg:inline-block z-30 bg-black p-3">
     <p class="text-white font-extrabold">Complete Web & Mobile Designer: UI/UX, Figma, +more</p>
     <div class="flex space-x-2">
       <button class="bg-[#ECEB98] text-xs p-1 font-medium">Bestseller</button>
@@ -44,8 +44,8 @@ onUnmounted(() => {
     <div ref="hero">
       <HomeHero />
     </div>
-    <div ref="content" class="max-w-6xl mx-auto py-6 grid grid-cols-5 gap-4">
-      <div class="col-span-3 space-y-6">
+    <div ref="content" class="max-w-6xl mx-auto py-6 px-2 lg:grid lg:grid-cols-5 gap-4">
+      <div class="lg:col-span-3 space-y-6">
         <HomeCourseList />
         <HomeExplore />
         <HomeCourseContent />

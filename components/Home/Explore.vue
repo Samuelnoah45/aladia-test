@@ -2,12 +2,12 @@
 <template>
   <div class="space-y-4">
     <h1 class="font-bold text-2xl">Explore related topics</h1>
-    <div class="flex gap-4">
+    <div class="flex flex-wrap gap-4">
       <button class="buttonStyle">Mobile App Design</button>
       <button class="buttonStyle">Web App Design</button>
       <button class="buttonStyle">Design</button>
     </div>
-    <div class="grid grid-cols-2 p-6 bg-[#F7F9FA]">
+    <div class="grid lg:grid-cols-2 p-6 bg-[#F7F9FA]">
       <div class="space-y-6">
         <h1 class="font-bold text-3xl">Coding Exercises</h1>
         <p class="text-sm">

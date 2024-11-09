@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="max-w-xs">
+  <div class="max-w-md">
     <div class="relative w-full h-32 overflow-hidden mb-3">
       <img src="@/assets/images/courses.png" alt="Course Image" class="w-full h-full object-cover" />
       <div class="absolute -top-4 left-2 rounded-full p-1">

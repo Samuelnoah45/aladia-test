@@ -12,7 +12,7 @@ const instructor = reactive({
 });
 </script>
 <template>
-  <div class="w-[80%] py-5">
+  <div class="py-5">
     <div>
       <div>
         <h2 class="text-xl font-bold text-violet-800 underline">

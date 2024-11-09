@@ -6,7 +6,7 @@
           Top companies choose
           <span class="text-blue-400 font-semibold">Udemy Business</span> to build in-demand career skills.
         </p>
-        <div class="flex items-center space-x-6">
+        <div class="flex items-center flex-wrap space-x-6">
           <img src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg" alt="Nasdaq" class="h-8" />
           <img src="https://s.udemycdn.com/partner-logos/v4/volkswagen-light.svg" alt="Volkswagen" class="h-8" />
           <img src="https://s.udemycdn.com/partner-logos/v4/box-light.svg" alt="Box" class="h-8" />
@@ -16,7 +16,7 @@
       </div>
 
       <div class="flex items-start justify-between">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm mb-6">
+        <div class="grid lg:grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm mb-6">
           <div class="space-y-1.5">
             <a href="#" class="block hover:text-white">Udemy Business</a>
             <a href="#" class="block hover:text-white">Teach on Udemy</a>

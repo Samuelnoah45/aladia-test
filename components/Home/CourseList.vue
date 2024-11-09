@@ -6,7 +6,7 @@ const showMore = ref(false);
 <template>
   <div class="p-4 border border-gray-400 space-y-4">
     <h1 class="secondary text-2xl font-bold">What you'll learn</h1>
-    <div class="grid grid-cols-2 gap-3 text-sm relative" :class="[showMore ? '' : 'h-[300px] overflow-hidden']">
+    <div class="grid lg:grid-cols-2 gap-3 text-sm relative" :class="[showMore ? '' : 'h-[300px] overflow-hidden']">
       <div class="flex gap-3" v-for="benefit in courseBenefits" :key="benefit.id">
         <Icon class="text-xl shrink-0 mt-1" name="material-symbols-light:check" />
 

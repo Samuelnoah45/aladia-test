@@ -14,9 +14,12 @@ const handleLanguageVisibility = () => {
 };
 </script>
 <template>
-  <div class="w-full bg-secondary p-6">
-    <div class="mx-auto grid grid-cols-5 max-w-6xl gap-16" :class="[isLanguageMore ? 'h-[430px]' : 'h-[330px]']">
-      <div class="col-span-3 space-y-6">
+  <div class="w-full lg:bg-secondary p-6">
+    <div
+      class="mx-auto lg:grid lg:grid-cols-5 flex flex-col-reverse max-w-6xl gap-16"
+      :class="[isLanguageMore ? 'lg:h-[430px]' : 'lg:h-[330px]']"
+    >
+      <div class="col-span-3 hidden lg:inline-block space-y-6">
         <Breadcrumb class="text-primaryDark text-sm font-bold" :model="items">
           <template #separator> <Icon class="text-xl text-white font-bold" name="lsicon:right-filled" /> </template>
         </Breadcrumb>

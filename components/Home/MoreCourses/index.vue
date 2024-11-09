@@ -8,7 +8,7 @@ const showMore = ref(false);
       More Courses by
       <span class="text-primary pl-1"> Andrei Neagoie</span>
     </h1>
-    <div class="grid grid-cols-3 gap-2 border-b pb-10">
+    <div class="grid lg:grid-cols-3 gap-2 border-b pb-10">
       <HomeMoreCoursesCard v-for="course in courses" :courseData="course" />
     </div>
     <button class="border p-3 w-full text-sm font-bold border-gray-400">Report Abuse</button>

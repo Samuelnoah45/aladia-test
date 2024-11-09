@@ -14,12 +14,12 @@ const props = defineProps({
       <img
         src="@/assets//images/courses2.png"
         alt="Product Thumbnail"
-        class="w-full h-full object-cover border border-gray-200"
+        class="w-full object-cover border border-gray-200"
       />
     </div>
 
     <div class="flex flex-col flex-1 space-y-1.5">
-      <h3 class="text-lg font-semibold text-gray-900">
+      <h3 class="font-semibold lg:text-lg text-sm text-gray-900">
         {{ courseData.title }}
       </h3>
 
@@ -40,7 +40,7 @@ const props = defineProps({
     </div>
 
     <div class="text-right">
-      <p class="text-lg font-bold text-gray-900">
+      <p class="lg:text-lg text-sm font-bold text-gray-900">
         {{ courseData.discountedPrice }}
       </p>
       <p class="text-sm line-through text-gray-500">
